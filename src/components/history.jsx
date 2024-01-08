@@ -1,11 +1,12 @@
-export default function history() {
+export default function history({ list }) {
+  let style = {
+    background: list.type == "expense" ? "#A30015" : "#00A878",
+  };
   return (
-    <div className="history-list">
-      <h1 className="title">History</h1>
-      <div className="item">
-        <span className="list-item">Income </span>
-        <span>$50</span>
-      </div>
+    <div className="item" style={style}>
+      <span className="list-amt">Rs.{list.amt}</span>
+      <span className="list-type">{list.des} </span>
+      <span className="list-date">{list.date}</span>
     </div>
   );
 }

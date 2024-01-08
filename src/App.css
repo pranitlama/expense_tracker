@@ -1,5 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #1f2041;
+}
+
 h1 {
   text-align: center;
+}
+
+.main-title {
+  background-color: #4b3f72;
+  color: white;
 }
 
 .section {
@@ -57,10 +67,13 @@ h1 {
 
 .item {
   display: flex;
-  justify-content: center;
-  background-color: wheat;
+  justify-content: space-around;
+  /* background-color: #a30015; */
   padding-top: 2px;
   padding-bottom: 2px;
   border-radius: 2px;
   text-align: center;
+  text-transform: capitalize;
+  font-size: 15px;
+  color: white;
 }
