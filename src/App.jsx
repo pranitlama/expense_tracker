@@ -18,7 +18,7 @@ function App() {
     <div>
       <h1 className="main-title">Expense Tracker</h1>
       <div className="section">
-        <Graph />
+        <Graph data={list} />
         <Entry addlist={addlist} />
         <div className="history-list">
           <h1 className="title">History</h1>

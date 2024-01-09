@@ -77,3 +77,41 @@ h1 {
   font-size: 15px;
   color: white;
 }
+
+.graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart {
+  position: relative;
+}
+
+.chart .title {
+  position: absolute;
+  left: 120px;
+  right: 0;
+  top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.glabel {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  gap: 1rem;
+}
+
+.tamt {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.amtspan {
+  display: block;
+  font-size: larger;
+  color: #00a878;
+}
