@@ -97,15 +97,17 @@ export default function entry({ addlist }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    let data = {
+    let entr = {
       type: type,
       des: typeopt,
       amt: amt,
       date: date == "" ? new Date().toLocaleDateString() : date,
     };
-    console.log(data);
-    addlist(data);
-    // setDes("");
+
+    let color = type == "expense" ? "#A30015" : "#00A878";
+    let data = type == "expense" ? -amt : +amt;
+
+    addlist(entr, color, data);
     setAmt("");
     setDate("");
   }
