@@ -6,6 +6,7 @@ export default function entry({ addlist }) {
   const [type, setType] = useState("");
   const [date, setDate] = useState("");
   const [opt, setOpt] = useState([]);
+  const [id, setId] = useState(0);
 
   const options = [
     {
@@ -97,17 +98,19 @@ export default function entry({ addlist }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     let entr = {
+      id: id,
       type: type,
       des: typeopt,
       amt: amt,
       date: date == "" ? new Date().toLocaleDateString() : date,
     };
 
-    let color = type == "expense" ? "#A30015" : "#00A878";
     let data = type == "expense" ? -amt : +amt;
 
-    addlist(entr, color, data);
+    addlist(entr, data);
+    setId((prev) => prev + 1);
     setAmt("");
     setDate("");
   }
