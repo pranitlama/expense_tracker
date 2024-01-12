@@ -27,7 +27,7 @@ const cheker = (arr, type) => {
   return ans;
 };
 export default function graph(props) {
-  console.log(props.data.data.datasets[0].data);
+  // console.log(props.data.data.datasets[0].data);
   return (
     <div className="graph">
       <div className="gitem">

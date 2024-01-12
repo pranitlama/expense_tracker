@@ -54,13 +54,14 @@ function App() {
     let ans;
     let temp;
     ans = list.data.datasets[0].transaction.filter((item) => item.id !== id);
-
+    console.log(type);
     setList((prevChartData) => {
       temp = prevChartData.data.datasets[0].data;
+      console.log(temp, "before");
       type == "expense"
-        ? (temp[1] = temp[1] - data)
+        ? (temp[1] = temp[1] + +data)
         : (temp[0] = temp[0] - data);
-
+      console.log(temp, "after");
       return {
         data: {
           datasets: [

@@ -118,3 +118,7 @@ h1 {
   font-size: larger;
   color: #00a878;
 }
+
+.delbtn {
+  cursor: pointer;
+}

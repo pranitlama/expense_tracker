@@ -8,7 +8,9 @@ export default function history({ list, del }) {
       <span className="list-amt">Rs.{list.amt}</span>
       <span className="list-type">{list.des} </span>
       <span className="list-date">{list.date}</span>
-      <a onClick={() => del(list.id, list.amt, list.type)}>Delete</a>
+      <a className="delbtn" onClick={() => del(list.id, list.amt, list.type)}>
+        Delete
+      </a>
     </div>
   );
 }
