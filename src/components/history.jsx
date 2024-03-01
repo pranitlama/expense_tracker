@@ -1,16 +1,21 @@
-export default function history({ list, del }) {
+import React from "react";
+
+function history({ data, deleteList }) {
+  // console.log("rendering history", list);
   let style = {
-    background: list.type == "expense" ? "#A30015" : "#00A878",
+    borderLeft: `10px solid ${data.type == "income" ? "#00A878" : "#A30015"}`,
   };
 
   return (
     <div className="item" style={style}>
-      <span className="list-amt">Rs.{list.amt}</span>
-      <span className="list-type">{list.des} </span>
-      <span className="list-date">{list.date}</span>
-      <a className="delbtn" onClick={() => del(list.id, list.amt, list.type)}>
+      <span className="list-amt">{data.amt}</span>
+      <span className="list-type">{data.des} </span>
+      <span className="list-date">{data.date}</span>
+      <a className="delbtn" onClick={() => deleteList(data.id)}>
         Delete
       </a>
     </div>
   );
 }
+
+export default history;

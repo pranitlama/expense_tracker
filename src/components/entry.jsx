@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function entry({ addlist }) {
+export default function entry({ addList }) {
   const [amt, setAmt] = useState("");
   const [typeopt, setTypeopt] = useState("");
   const [type, setType] = useState("");
@@ -103,33 +103,22 @@ export default function entry({ addlist }) {
       id: id,
       type: type,
       des: typeopt,
-      amt: amt,
+      amt: type == "income" ? parseInt(amt) : -parseInt(amt),
       date: date == "" ? new Date().toLocaleDateString() : date,
     };
 
-    let data = type == "expense" ? -amt : +amt;
-
-    addlist(entr, data);
-    setId((prev) => prev + 1);
-    setAmt("");
-    setDate("");
+    if (type != "" && typeopt != "" && amt != "") {
+      addList(entr);
+      setId((prev) => prev + 1);
+      setAmt("");
+      setDate("");
+    }
   }
   return (
     <div className="entry">
       <h1 className="title">Transaction</h1>
       <form action="" onSubmit={handleSubmit}>
         <div className="entryform">
-          {/* <div className="input-group">
-            <input
-              type="text"
-              name="des"
-              onChange={(e) => onchange(e, "des")}
-              id=""
-              value={des}
-              className="form-input"
-              placeholder="type"
-            />
-          </div> */}
           <select
             name="type"
             id=""
