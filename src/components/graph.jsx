@@ -14,14 +14,14 @@ export default function graph(props) {
       ? (ans = arr
           .filter((item) => item.type === "expense")
           .reduce(
-            (accumulator, currentValue) => accumulator + +currentValue.amt,
+            (accumulator, currentValue) => accumulator + currentValue.amt,
             0
           ))
       : (ans = arr
           .filter((item) => item.type === "income")
 
           .reduce(
-            (accumulator, currentValue) => accumulator + +currentValue.amt,
+            (accumulator, currentValue) => accumulator + currentValue.amt,
             0
           ));
 

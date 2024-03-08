@@ -4,10 +4,19 @@ import Entry from "./components/entry";
 import Graph from "./components/graph";
 
 import data from "./Data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const getLocalItem = () => {
+  let list = localStorage.getItem("lists");
+  if (list) {
+    return JSON.parse(localStorage.getItem("lists"));
+  } else {
+    return [];
+  }
+};
 
 function App() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalItem());
 
   const config = {
     data: {
@@ -40,6 +49,10 @@ function App() {
     let ans = list.filter((item) => item.id !== id);
     setList(ans);
   }
+
+  useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(list));
+  }, [list]);
 
   return (
     <div>
